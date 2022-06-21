@@ -1,3 +1,54 @@
+# react-shoppingmall
+
+## Animated demo
+![동작result](https://user-images.githubusercontent.com/99124279/174914627-e0915933-729c-49e6-bb42-5622f3ac2c15.gif)
+
+## styled-components를 사용하여 NavLink의 active 스타일 넣기
+Blog Posting: https://velog.io/@jm1225/styled-components-NavLink-active-styled-input
+
+```jsx
+const AppDiv = styled.div`
+  text-align: center;
+`
+const BlackNav = styled.div`
+  background: black;
+  width: 100%;
+  display: flex;
+  color: white;
+  padding: 20px;
+  font-weight: 500;
+  font-size: 20px;
+  box-sizing: border-box;
+`
+
+const LogoName = styled.div`
+  font-size: 30px;
+  width: 300px;
+  margin: 15px;
+`
+
+const NavStyle = styled(NavLink)`
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 5px;
+  outline: invert;
+  &:link {
+    transition : 0.5s;
+    text-decoration: none;
+  }
+  &:hover {
+    color: aquamarine;
+  }
+  &.active {
+    color: aqua;
+    position: relative;
+    top: 2px;
+  }
+`
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

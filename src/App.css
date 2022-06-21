@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+
+.black-nav {
+  background: black;
+  width: 100%;
+  display: flex;
+  color: white;
+  padding: 20px;
+  font-weight: 500;
+  font-size: 20px;
+  box-sizing: border-box;
+}
+
+.logoName {
+  font-size: 30px;
+  width: 300px;
+  margin: 15px;
+}
+
+.nav-link {
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 5px;
+}
+
+.nav-link:link{
+  transition : 0.5s; /* 속성 변경할 때 효과의 속도 조절 */
+	text-decoration: none;
+}
+.nav-link:hover {
+  color: aquamarine;
+}
+
+.nav-linka { 
+  color: aqua;
+  padding: 20px;
+  font-size: 20px;
+}

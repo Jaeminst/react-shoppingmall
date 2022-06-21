@@ -1,18 +1,17 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { BlueButton } from '../Components/styled';
 import styled from "styled-components";
 import data from '../data/data'
 
 const Container = styled.div`
-  display:contents;
+  display: contents;
   width:100%;
 `
 const Row = styled.div`
   display: flex;
   flex-wrap: wrap;
   width:100%;
-  max-width: 1439px;
   margin-left: auto;  
   margin-right: auto;  
 `
@@ -40,29 +39,33 @@ const Button = styled(BlueButton)`
   }
 `;
 
-export default function Home() {
-
+export default function Detail() {
   const [shoes, setShoes] = useState(data);
+  const navigate = useNavigate();
+  const params = useParams();
+  
+  const findItem = shoes.find((item) => {
+    return item.id == params.id
+  });
   function Shoes({ shoes }) {
     return (
       <Collection>
-        <Link to={`/detail/${shoes.id}`}>
-          <img src={shoes.img} width="100%" alt=""/>
-        </Link>
+        <img src={shoes.img} width="100%" alt=""/>
         <h4>{shoes.title}</h4>
         <p>{shoes.content}</p>
+        <p>{shoes.price} 원</p>
       </Collection>
     );
    }
   return (
     <div>
-      <h1>Home</h1>
+      <h1>Detail</h1>
       <Container>
         <Row>
-          {shoes.map((item, i) => {
-            return <Shoes shoes={item} key={i}/>
-          })}
+          <Shoes shoes={findItem} />
         </Row>
+        <Button onClick={() => navigate('/')}>주문하기</Button>
+        <Button onClick={() => navigate(-1)}>뒤로가기</Button>
       </Container>
     </div>
   )

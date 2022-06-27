@@ -12,7 +12,7 @@ function App() {
   
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <nav className='BlackNav'>
           <div className='logo-name'>Jaeminst Shop</div>
           <NavLink className='nav-link' to='/'>Home</NavLink>

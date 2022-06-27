@@ -1,0 +1,33 @@
+.blue-button {
+  background-color: #eee;
+  border: none;
+  outline: none;
+  &:hover {
+    color: blue;
+    outline: auto;
+    outline-color: blue;
+  }
+  &:active {
+    color: blue;
+    outline: auto;
+    outline-color: blue;
+    position: relative;
+    top: 2px;
+  }
+}
+
+.button {
+  @extend .blue-button;
+  width: 360px;
+  padding: 20px;
+  margin: 5px;
+  border-radius: 10px;
+  @media (max-width: 768px) {
+    width: 230px;
+  }
+  @media (max-width: 480px) {
+    width: 120px;
+  }
+}
+
+@import './Home.scss'

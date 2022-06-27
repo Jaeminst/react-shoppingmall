@@ -1,0 +1,48 @@
+@import './reset.scss';
+
+$mainColor: #00ff88;
+
+div.App {
+  text-align: center;
+
+  .logo-name {
+    font-size: 30px;
+    width: 300px;
+    margin: 15px;
+  }
+
+  .BlackNav {
+    background: black;
+    width: 100%;
+    display: flex;
+    color: $mainColor;
+    padding: 20px;
+    font-weight: 500;
+    font-size: 20px;
+    box-sizing: border-box;
+
+    .nav-link {
+      color: white;
+      padding: 20px;
+      font-size: 20px;
+      font-weight: 400;
+      margin: 5px;
+      outline: invert;
+
+      &:link {
+        transition : 0.5s;
+        text-decoration: none;
+      }
+
+      &:hover {
+        color: aquamarine;
+      }
+
+      &.active {
+        color: aqua;
+        position: relative;
+        top: 2px;
+      }
+    }
+  }
+}
